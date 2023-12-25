@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression suite" verbose="0" >
+    <test name=" Regression Testing" >
+        <classes>
+            <class name="login.InitiateDriverTest"></class>
+            <class name="login.AppLoginTest"></class>
+         <!--   <class name="teacherattendance.CheckinAttendanceTest"></class>
+            <class name="teacherattendance.EditCheckinAttendanceTest"></class> -->
+         <!--   <class name="teacherattendance.CheckOutAttendanceTest"></class> -->
+          <!--  <class name="teacherattendance.ClassAttendanceTest"></class> -->
+          <!--  <class name="teacherattendance.EditClassAttendanceTest"></class> -->
+          <!--  <class name="disciplinescore.DisciplineScoreTest"></class>
+            <class name="disciplinescore.DisciplineScoreByQRCodeTest"></class>
+            <class name="disciplinescore.DisciplineScoreByStudentIDTest"></class> -->
+          <!--  <class name="disciplinescore.ReduceDisciplineScoreTest"></class>
+            <class name="disciplinescore.ReduceDisciplineScoreByQRCodeTest"></class>
+            <class name="disciplinescore.ReduceDisciplineScoreByStudentID"></class> -->
+           <!-- <class name="onlineclassroom.OnlineClassRoomTest"></class> -->
+           <!-- <class name="broadcastflow.BroadcastTest"></class> -->
+           <!-- <class name="teachersleave.TeachersLeaveTest"></class> -->
+           <!-- <class name="topup.TopupTest"></class> -->
+           <!-- <class name="shopproducts.ShopProductsTest"></class> -->
+            <!--<class name="timetable.TimeTableTest"></class> -->
+           <!-- <class name="schoolcalendar.SchoolCalendarTest"></class> -->
+           <!-- <class name="report.ReportTest"></class> -->
+            <!--<class name="appsetting.SettingTest"></class> -->
+           <!-- <class name="message.MessageTest"></class> -->
+            
+            <class name="login.StudentLoginTest"></class>
+           <class name="timetable.StudentTimeTableTest"></class>
+            <class name="onlineclassroom.StudentOnlineClassRoomTest"></class>
+            <!--<class name="academicstudentresult.AcademicResultTest"></class> -->
+            <class name="studentsleave.StudentFullDayLeaveTest"></class>
+            <class name="studentsleave.StudentHalfDayLeaveTest"></class>
+            <class name="schoolcalendar.StudentSchoolCalendarTest"></class>
+            <class name="topup.StudentTopUpTest"></class>
+            
+        </classes>
+    </test>
+    <test name="Checkin Attendance">
+        <classes>
+
+        </classes>
+    </test>
+</suite>
