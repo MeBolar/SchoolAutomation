@@ -21,6 +21,10 @@ public class InitiateDriver {
 
     private MutableCapabilities capabilities=null;
     private EventFiringWebDriver eventFiringWebDriver;
+    public static String userName = "sukeshbolar7"; //Enter your LT Username here
+    public static String accessKey = "Sf6dAmxSFKDCXgKhcJBE3WLEZqpi63PlyAgjhpwnY0GKVBcOia"; //Enter your LT AccessKey here
+
+    public String gridURL = "@mobile-hub.lambdatest.com/wd/hub";
 
     public InitiateDriver() throws MalformedURLException {
 
@@ -39,8 +43,11 @@ public class InitiateDriver {
                 //code to setup iOS driver
             }
             else if(runOn.equalsIgnoreCase("ANDROID")){
-                appiumDriver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), getBrowserCapabilities(runOn));
-              //  switchContext("FLUTTER");
+              //  appiumDriver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), getBrowserCapabilities(runOn));
+
+                String hub = "https://" + userName + ":" + accessKey + gridURL;
+                appiumDriver = new AppiumDriver(new URL(hub), getBrowserCapabilities(runOn));
+                //  switchContext("FLUTTER");
             }
         }
 
@@ -100,19 +107,36 @@ public class InitiateDriver {
             }
             else if (runOn.equalsIgnoreCase("ANDROID"))
             {
-//                String dirPath= System.getProperty("user.dir");
-//                String apkPath=dirPath+ appPath;
-//                File app= new File(apkPath);
                 capabilities=new MutableCapabilities();
                 capabilities.setCapability("appium:deviceName", "Redmi Note 10S");
                 capabilities.setCapability("appium:platformName", "Android");
                 capabilities.setCapability("appium:automationName", "UiAutomator2");
                 capabilities.setCapability("appium:newCommandTimeout","120");
-                //       capabilities.setCapability("appium:newCommandTimeout","3000");
                 capabilities.setCapability("appium:autoGrantPermissions","true");
-            //    capabilities.setCapability("appium:app", app.getAbsolutePath());
                 capabilities.setCapability("appium:appPackage", "school.jabjai.jabjaiapp");
                 capabilities.setCapability("appium:appActivity", "MainActivity");
+
+                //Lambdatest codes
+
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability("build","ParallelSample Android");
+                capabilities.setCapability("name","Android Galaxy S21 Ultra 5G 11");
+                capabilities.setCapability("deviceName", "Galaxy S21 Ultra 5G");
+                capabilities.setCapability("platformVersion","11");
+                capabilities.setCapability("platformName", "Android");
+                capabilities.setCapability("isRealMobile", true);
+                //AppURL (Create from Wikipedia.apk sample in project)
+                capabilities.setCapability("app", "lt://APP10160241051703559841378989"); //Enter your app URL from previous step here
+                capabilities.setCapability("deviceOrientation", "PORTRAIT");
+                capabilities.setCapability("console", true);
+                capabilities.setCapability("network", true);
+                capabilities.setCapability("visual", true);
+                capabilities.setCapability("devicelog", true);
+
+
+
+
+
             }
         }
         catch (Exception e)
